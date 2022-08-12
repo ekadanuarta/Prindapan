@@ -9331,39 +9331,10 @@ Jumlah Order:
 Untuk Lainnya :
 ID :
 Nick : 
-Jumlah Order :`) 
+Jumlah Order :
+`) 
 break
-case 'bayar': case 'qris': {
-	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-teks = `* PAYMENT *
-
-• *Gopay : 6288221400832*
-• *Dana : 6288221400832*
-• *Pulsa : 6288221400832*
-• *Scan Qris Di Atas Sesuai Nominal Harga!!*`
-let buttons = [
-{buttonId: `menu`, buttonText: {displayText: 'Menu'}, type: 1}
-]
-let buttonMessage = {
-image: thum,
-jpegThumbnail: log0,
-caption: teks,
-footer: `${botname}`,
-buttons: buttons,
-headerType: 4,
-contextInfo:{externalAdReply:{
-title:"I deserve something for my hardwork",
-body: "Click", 
-thumbnail: fs.readFileSync("storage/qr.jpg"),
-mediaType:1,
-mediaUrl: '-',
-sourceUrl: "-"
-}}
-}
-XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-}
-break
+
             case 'mee': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
