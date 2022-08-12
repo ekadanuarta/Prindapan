@@ -9297,45 +9297,37 @@ Jumlah Order :`
 
 m.reply(menu) 
 break
-case 'qris': {          
-            anu = `* PAYMENT *
+case 'qris': {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+teks = `* PAYMENT *
 
 • *Gopay : 6288221400832*
 • *Dana : 6288221400832*
 • *Pulsa : 6288221400832*
-• *Scan Qris Di Atas Sesuai Nominal Harga!!*`
-let btn = [{
-                                urlButton: {
-                                    displayText: 'Website ',
-                                    url: `comingsoon`
-                                }
-                            }, {
-                                callButton: {
-                                    displayText: 'Script ',
-                                    url: `tanyaowner`
-                                }                           
-                            }]
-                         let setbot = db.data.settings[botNumber]
-                        if (setbot.templateImage) {
-                        XeonBotInc.send5ButImg(m.chat, menulist, global.botname, global.thumb, btn, global.thumb)
-                        } else if (setbot.templateGif) {
-                        XeonBotInc.send5ButGif(m.chat, menulist, global.botname, global.vidmenu, btn, global.thumb)
-                        } else if (setbot.templateVid) {
-                        XeonBotInc.send5ButVid(m.chat, anu, global.botname, global.vidmenu, btn, global.thumb)
-                        } else if (setbot.templateVideo) {
-                        XeonBotInc.send5ButVid(m.chat, menulist, global.botname, global.vidmenu, btn, global.thumb)
-                        /////////} else if (setbot.templateMsg) {
-                        /////////XeonBotInc.send5ButMsg(m.chat, menulist, global.botname, btn)
-                        } else if (setbot.templateDocument) {
-                        let buttonmenu = [
-        	{ urlButton: { displayText: `Website `, url : `comingsoon` } },
-            { urlButton: { displayText: `Script`, url: `tanyaowner` } },
-            { quickReplyButton: { displayText: `TopUp`, id: 'menu'} },            
-        	]
-        	XeonBotInc.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
-                        }
-                     }
-            break
+• *Scan Qris Di Atas Sesuai Nominal Harga!!*`
+let buttons = [
+{buttonId: `menu`, buttonText: {displayText: 'Menu'}, type: 1}
+]
+let buttonMessage = {
+image: thum,
+jpegThumbnail: log0,
+caption: teks,
+footer: `${botname}`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title:"I deserve something for my hardwork",
+body: "Click", 
+thumbnail: fs.readFileSync("storage/qr.jpg"),
+mediaType:1,
+mediaUrl: '-',
+sourceUrl: "-"
+}}
+}
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
             case 'mee': {
             	reply (`Pembuatnya adalah =
 1. Denpa
