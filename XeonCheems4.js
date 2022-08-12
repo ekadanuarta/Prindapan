@@ -8817,7 +8817,9 @@ break
 
 
 
-case 'menu': {        	   
+case 'menu': {     
+  if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 	   
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
                     title: `Hi ${pushname}`,
@@ -8958,6 +8960,8 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             }
             break
        case 'marvel':
+     if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)  
 var unicorn = await getBuffer(picak+'Marvel Super War')
 await semar.send5ButImg(from, `MARVEL SUPER WAR
 ==================
@@ -8972,6 +8976,8 @@ Credits Proses 1-15 menit
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'one':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'One Punch Man')
 await semar.send5ButImg(from, `ONE PUNCH MAN
 ==================
@@ -8984,6 +8990,8 @@ Cupons Proses 1-15 menit
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'lord':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Lord Mobile')
 await semar.send5ButImg(from, `LORDS MOBILE
 ==================
@@ -8997,6 +9005,8 @@ diamond proses 1-15 menit
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'lol':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'League Of Legends')
 await semar.send5ButImg(from, `LEAGUE OF LEGENDS:WILD RIFT
 ==================
@@ -9015,6 +9025,8 @@ WildCore Proses 1-15 menit
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'apex':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Apex Legends Mobile')
 await semar.send5ButImg(from, `APEX LEGENDS MOBILE
 ==================
@@ -9030,6 +9042,8 @@ Syndicate Gold proses 1-15 menit
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'mla':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Mobile Legend')
 await semar.send5ButImg(from, `DIAMOND MLBB FAST
 ==================
@@ -9058,6 +9072,8 @@ Diamond *Proses 1 - 15 Menit*
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'ragnarok':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Ragnarok')
 await semar.send5ButImg(from, `RAGNAROK M:ETERNAL LOVE
 ==================
@@ -9072,6 +9088,8 @@ Bcc *Proses 1 - 15 Menit*
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break 
 case 'sausage':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Sausage Man')
 await semar.send5ButImg(from, `SAUSAGE MAN
 ==================
@@ -9090,6 +9108,8 @@ await semar.send5ButImg(from, `SAUSAGE MAN
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'genshin':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Genshin Impact')
 await semar.send5ButImg(from, `GENSHIN IMPACT
 ==================
@@ -9104,6 +9124,8 @@ await semar.send5ButImg(from, `GENSHIN IMPACT
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'mlb':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Mobile Legend')
 await semar.send5ButImg(from, `DIAMOND MLBB PAKET B
 ==================
@@ -9120,6 +9142,8 @@ await semar.send5ButImg(from, `DIAMOND MLBB PAKET B
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'valorant':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Valorant')
 await semar.send5ButImg(from, `VALORANT
 ==================
@@ -9140,6 +9164,8 @@ Points proses 1-15 menit
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'epep':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Free Fire')
 await semar.send5ButImg(from, `DIAMOND FREE FIRE
 ==================
@@ -9174,6 +9200,8 @@ proses maksimal 24 jam
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'aov':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Arena Of Valor')
 await semar.send5ButImg(from, `ARENA OF VALOR
 ==================
@@ -9187,6 +9215,8 @@ await semar.send5ButImg(from, `ARENA OF VALOR
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'pubg':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'PUBG Mobile')
 await semar.send5ButImg(from, `PUBG MOBILE REG ID 
 ==================
@@ -9210,6 +9240,8 @@ UC *Proses 1-15 menit*
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'cod':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Call Of Duty Mobile')
 await semar.send5ButImg(from, `CALL OF DUTY MOBILE
 ==================
@@ -9225,6 +9257,8 @@ Cp *Proses 1-15 menit*
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'saint':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Saint Seiya Awakening')
 await semar.send5ButImg(from, `SAINT SEIYA AWAKENING
 ==================
@@ -9240,6 +9274,8 @@ Coupons *Proses 1-15 menit*
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'domino':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Higgs Domino')
 await semar.send5ButImg(from, `HIGGS DOMINO
 ==================
@@ -9255,6 +9291,8 @@ Chips Proses 1-15 menit
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 case 'life':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Life After')
 await semar.send5ButImg(from, `LIFE AFTER
 ==================
@@ -9270,10 +9308,10 @@ Credits Proses 1-15 menit
 ===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
 break  
 //------cara pesan-----//
-case 'format': {          
-            menu = `
-*Sebelum lanjut, Mohon diisi dulu !!*
-
+case 'format': {      
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)    
+reply(`*Sebelum lanjut, Mohon diisi dulu !!*
 
 Untuk Mobile Legend & Genshin Impact:
 ID :
@@ -9293,11 +9331,9 @@ Jumlah Order:
 Untuk Lainnya :
 ID :
 Nick : 
-Jumlah Order :`
-
-m.reply(menu) 
+Jumlah Order :`) 
 break
-case 'qris': {
+case 'bayar': case 'qris': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 teks = `* PAYMENT *
@@ -9329,6 +9365,8 @@ XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
             case 'mee': {
+            	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
             	reply (`Pembuatnya adalah =
 1. Denpa
 2.Eka Danu Arta
