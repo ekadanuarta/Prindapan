@@ -55,32 +55,32 @@ global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
-global.vcardowner = ['6288221400832'] //ur owner number
+global.vcardowner = ['6288221400832', '6283869780790'] //ur owner number
 global.ownername = "ItsmeDann" //ur owner name
 global.ytname = "Ra ndue" //ur yt chanel name
 global.socialm = "IG @itsme_danuu" //ur github or insta name
 global.location = "adoh pokok e" //ur location
 
 //bot bomdy 
-global.owner = ['6288221400832']
+global.owner = ['6288221400832', '6283869780790']
 global.ownertag = '6288221400832' //ur tag number
-global.botname = 'Anya-Bot' //ur bot name
+global.botname = 'Bot-Store' //ur bot name
 global.linkz = "https://instagram.com/itsme_danuu" //your theme url which will be displayed on whatsapp
 global.websitex = "https://ekagans02.herokuapp.com" //ur website to be displayed
 global.botscript = 'https://github.com/Nurutomo/wabot-aq' //script link
 global.reactmoji = "❤" //ur menu react emoji
 global.themeemoji = "😁" //ur theme emoji
-global.packname = "Anya-Bot" //ur sticker watermark packname
+global.packname = "Bot-Store" //ur sticker watermark packname
 global.author = "ItsmeDann" //ur sticker watermark author
 
 //Bot theme media
 global.thum = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur thumb pic
 global.log0 = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur logo pic
 global.err4r = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur error pic
-global.thumb = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur thumb pic
+global.thumb = fs.readFileSync("./storage/qr.jpg") //ur thumb pic
 
 //damtabase
-global.premium = ['6288221400832'] //ur premium numbers
+global.premium = ['6288221400832', '6283869780790'] //ur premium numbers
 global.ntilinkytvid = []
 global.ntilinkytch = []
 global.ntilinkig = []
@@ -107,15 +107,15 @@ global.prefa = ['','!','.','🐦','🐤','🗿','#']
 global.sp = '⭔'
 global.mess = {
     success: 'Berhasil ✓',
-    admin: 'Fitur khusus nggo admin!',
-    botAdmin: 'Bot kudu dadi admin!',
-    owner: 'Fitur khusus nggo Owner!',
-    group: 'Fitur Khusus nggo Grup!',
-    private: 'Fitur khusus nggo Chat pribadi!',
-    bot: 'Fitur khusus nggo Bot',
-    wait: 'sek sediluk...',
-    linkm: 'link e ndi?',
-    error: 'Eror su!!',
+    admin: 'Fitur khusus admin!',
+    botAdmin: 'Bot harus jadi admin!',
+    owner: 'Fitur khusus Owner!',
+    group: 'Fitur Khusus Grup!',
+    private: 'Fitur khusus Chat pribadi!',
+    bot: 'Fitur khusus Bot',
+    wait: 'wait a minute...',
+    linkm: 'linknya?',
+    error: 'Eror !!',
     endLimit: 'Limit dino iki wes ntek, Limit di reset neh jam 12 Bengi',
     ban: 'Koe wes di ban ro owner bot, nek pengen di buka soko blokir bot, chat owner.',
     nsfw: 'Fitur nsfw mati, chat admin nggo aktifke nsfw',

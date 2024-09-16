@@ -8812,206 +8812,143 @@ sourceUrl: "-"
 XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
-case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
-		if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
-	                let btn = [{
-                                urlButton: {
-                                    displayText: 'Website 🦄',
-                                    url: `${websitex}`
-                                }
-                            }, {
-                                callButton: {
-                                    displayText: 'Script 🍜',
-                                    url: `${botscript}`
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'All Menu 🍱',
-                                    id: 'allmenu'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'List Menu 🍢',
-                                    id: 'command'
-                                }  
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Owner 💀',
-                                    id: 'owner'
-                                }
-                            }]
-                         let setbot = db.data.settings[botNumber]
-                        if (setbot.templateImage) {
-                        XeonBotInc.send5ButImg(m.chat, menulist, global.botname, global.thumb, btn, global.thumb)
-                        } else if (setbot.templateGif) {
-                        XeonBotInc.send5ButGif(m.chat, menulist, global.botname, global.vidmenu, btn, global.thumb)
-                        } else if (setbot.templateVid) {
-                        XeonBotInc.send5ButVid(m.chat, anu, global.botname, global.vidmenu, btn, global.thumb)
-                        } else if (setbot.templateVideo) {
-                        XeonBotInc.send5ButVid(m.chat, menulist, global.botname, global.vidmenu, btn, global.thumb)
-                        /////////} else if (setbot.templateMsg) {
-                        /////////XeonBotInc.send5ButMsg(m.chat, menulist, global.botname, btn)
-                        } else if (setbot.templateDocument) {
-                        let buttonmenu = [
-        	{ urlButton: { displayText: `Website 🦄`, url : `${websitex}` } },
-            { urlButton: { displayText: `Script 🍜`, url: `${botscript}` } },
-            { quickReplyButton: { displayText: `All Menu 🍱`, id: 'allmenu'} },
-            { quickReplyButton: { displayText: `List Menu 🍢`, id: 'command'} },
-            { quickReplyButton: { displayText: `Owner 💀`, id: 'owner'} }
-        	]
-        	XeonBotInc.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
-                        }
-                     }
-            break
-                case 'command': {
-                	   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
+
+
+
+
+
+case 'menu': {     
+  if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 	   
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
                     title: `Hi ${pushname}`,
-                    description: `Please Choose The Menu\n\n`,
+                    description: `Silahkan Pilih Gamenya\n\n`,
                     buttonText: "Menu",
                     footerText: `${global.botname}`,
                     listType: "SINGLE_SELECT",
                     sections: [{
-								"title": "Initial Features Of Bot ❤",
+								"title": "Ini untuk anda yg ingin tau siapa pembuat botnya",
 								"rows": [
 									{
-										"title": "Other ☕",
-										"description": "Displays The List Of Other Features",
-										"rowId": `${prefix}othermenu`
+										"title": "Pembuat Bot",
+										"description": "Menampilkan siapa saja yg merakit bot ini",
+										"rowId": `${prefix}mee`
 									}
 								]
 							},
 							{
-								"title": "Bot Features ❤️",
+								"title": "Ini adalah semua Gamenya",
 								"rows": [
 									{
-										"title": "All Menu 🥀",
-										"description": "Displays The List Of All The Features!",
-										"rowId": `${prefix}allmenu`
+										"title": "Free Fire",
+										"description": "menampilkan list harga diamond free fire",
+										"rowId": `${prefix}epep`
 									},
 									{
-										"title": "Owner Menu 💠",
-										"description": "Displays The List Of Owner Features",
-										"rowId": `${prefix}ownermenu`
+										"title": "Arena Of Valor",
+										"description": "menampilkan list harga voucher arena of valor",
+										"rowId": `${prefix}aov`
 										},
 									{
-										"title": "Group Menu ✨",
-										"description": "Displays The List Of Main Features",
-										"rowId": `${prefix}groupmenu`
+										"title": "Mobile Legend Paket A",
+										"description": "menampilkan list harga diamond mobile legend",
+										"rowId": `${prefix}mla`
 										},
 										{
-										"title": "Maker Menu 🌈",
-										"description": "Displays The List Of Logo Making Features",
-										"rowId": `${prefix}makermenu`
+										"title": "Mobile Legend Paket B",
+										"description": "menampilkan list harga diamond mobile legend",
+										"rowId": `${prefix}mlb`
 									},
 									{
-										"title": "Sound Menu 🎵",
-										"description": "Displays The List Of Sound Features",
-										"rowId": `${prefix}soundmenu`
+										"title": "PUBG",
+										"description": "menampilkan list harga voucher pubg",
+										"rowId": `${prefix}pubg`
 									},
 									{
-										"title": "Download Menu ↘️",
-										"description": "Displays The List Of Download Features",
-										"rowId": `${prefix}downloadmenu`
+										"title": "Ragnarok",
+										"description": "menampilkan list harga bcc ragnarok",
+										"rowId": `${prefix}ragnarok`
 									},
 									{
-										"title": "Sticker Menu 🃏",
-										"description": "Displays The List Of Sticker Features",
-										"rowId": `${prefix}stickermenu`
+										"title": "Genshin Impact",
+										"description": "menampilkan list harga crystal ghensin impact",
+										"rowId": `${prefix}genshin`
 									},
 									{
-										"title": "Search Menu 🔎",
-										"description": "Displays The List Of Searching Features",
-										"rowId": `${prefix}searchmenu`
+										"title": "Sausage Man",
+										"description": "menampilkan list harga candies sausage man",
+										"rowId": `${prefix}sausage`
 									},
 									{
-										"title": "Tool Menu ⚙️",
-										"description": "Displays The List Of Tool Features",
-										"rowId": `${prefix}toolmenu`
+										"title": "Saint Seiya Awakening",
+										"description": "menampilkan list harga coupons saint seiya awakening",
+										"rowId": `${prefix}saint`
 									},
 									{
-										"title": "Random Image Menu 🌆",
-										"description": "Displays The List Of Random Image Features",
-										"rowId": `${prefix}randomimagemenu`
+										"title": "Life After",
+										"description": "menampilkan list harga credits life after",
+										"rowId": `${prefix}life`
 									},
 									{
-										"title": "Image Effect Menu 🖼️",
-										"description": "Displays The List Of Image Effect Features",
-										"rowId": `${prefix}imageeffectmenu`
+										"title": "Higgs Domino",
+										"description": "menampilkan list harga chip higgs domino",
+										"rowId": `${prefix}domino`
+									},
+									{
+										"title": "Apex Legends Mobile",
+										"description": "menampilkan list harga syndicate gold apex legends mobile",
+										"rowId": `${prefix}apex`
 									},
 										{
-											"title": "Anime Menu 😘",
-										"description": "Displays The List Of Random Anime Features",
-										"rowId": `${prefix}animemenu`
+											"title": "Valorant",
+										"description": "menampilkan list harga points valorant",
+										"rowId": `${prefix}valorant`
 										},
 										{
-											"title": "Emote Menu 😀",
-										"description": "Displays The List Of Emote Features",
-										"rowId": `${prefix}emotemenu`
+											"title": "Call Of Duty Mobile",
+										"description": "menampilkan list harga cp call of duty mobile",
+										"rowId": `${prefix}cod`
 										},
 										{
-										"title": "Anime Sticker Menu ☺️",
-										"description": "Displays The List Of Anime Sticker Features",
-										"rowId": `${prefix}animestickermenu`
+											"title": "League Of Legend",
+										"description": "menampilkan list harga wild core league of legend",
+										"rowId": `${prefix}lol`
+										},
+										{
+										"title": "Lord Mobile",
+										"description": "menampilkan list harga diamond lord mobile",
+										"rowId": `${prefix}lord`
 									     },
 									{
-										"title": "Nsfw Menu 🤓",
-										"description": "Displays The List Of Nsfe Features",
-										"rowId": `${prefix}nsfwmenu`
+										"title": "One Punch Man",
+										"description": "menampilkan list harga coupons one punch man",
+										"rowId": `${prefix}one`
 									     },
 										{
-											"title": "Fun Menu 🕺",
-										"description": "Displays The List Of Fun Features",
-										"rowId": `${prefix}funmenu`
+											"title": "Marvel Super War",
+										"description": "menampilkan list harga credits marvel super war",
+										"rowId": `${prefix}marvel`
 										},
-										{
-										"title": "Game Menu 🎮",
-										"description": "Displays The List Of Game Features",
-										"rowId": `${prefix}gamemenu`
-									},
-										{
-											"title": "Convert Menu ⚒️",
-										"description": "Displays The List Of Convert Features",
-										"rowId": `${prefix}convertmenu`
-										},
-										{
-											"title": "Database Menu ♻️",
-										"description": "Displays The List Of Database Features",
-										"rowId": `${prefix}databasemenu`
-										},
-										{
-										"title": "Indo Menu  🦜",
-										"description": "Displays The List Of Indo Features",
-										"rowId": `${prefix}indomenu`
-									},
-										{
-											"title": "Horoscope Menu 🕊️",
-										"description": "Displays The List Of Horoscope Features",
-										"rowId": `${prefix}indohoroscopemenu`
-										}
 								]
 							},
 							{
-								"title": "Chat With Fellow Users 🌝",
+								"title": "Ini untuk anda yg belum tau caranya memesan",
 								"rows": [
 									{
-										"title": "Anonymous Chat Menu 🙎🏻‍♂️",
-										"description": "Displays The List Of Anonymous Chat Features",
-										"rowId": `${prefix}anonymousmenu`
+										"title": "Cara Pemesanan",
+										"description": "tutorial memesan hehe",
+										"rowId": `${prefix}format`
 									}
 								]
 							},
 							{
-								"title": "Credit ©️",
+								"title": "Untuk Pembayarannya",
 								"rows": [
 									{
-										"title": "Thanks To ❤️",
-										"description": "Displays The List Of Credit Of The Bot !!",
-										"rowId": `${prefix}tqtt`
+										"title": "Qris",
+										"description": "pembayaran lewat sini kak",
+										"rowId": `${prefix}qris`
 									}
 								]
 							}
@@ -9019,9 +8956,397 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
           listType: 1
                 }
             }), {})
-            XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
+            semar.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
+       case 'marvel':
+     if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)  
+var unicorn = await getBuffer(picak+'Marvel Super War')
+await semar.send5ButImg(from, `MARVEL SUPER WAR
+==================
+55 Credits Rp 17.000
+275 Credits Rp 75.000
+565 Credits Rp 148.000
+1155 Credits Rp 294.000
+1765 Credits Rp 475.000
+2950 Credits Rp 741.000
+6000 Credits Rp 1.533.00
+Credits Proses 1-15 menit
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'one':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'One Punch Man')
+await semar.send5ButImg(from, `ONE PUNCH MAN
+==================
+6Coupons Rp 12.000
+37Coupons Rp 75.000
+109Coupons Rp 217.000
+362Coupons Rp 722.000
+904Coupons Rp 1.843.000
+Cupons Proses 1-15 menit
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'lord':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Lord Mobile')
+await semar.send5ButImg(from, `LORDS MOBILE
+==================
+123 Diamond Rp 23.000
+246 Diamond Rp 46.000
+737 Diamond Rp 112.000
+1228 Diamond Rp 224.000
+2455 Diamond Rp 448.000
+7365 Diamond Rp 1.250.000
+diamond proses 1-15 menit
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'lol':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'League Of Legends')
+await semar.send5ButImg(from, `LEAGUE OF LEGENDS:WILD RIFT
+==================
+125WildCore Rp 16.000
+250WildCore Rp 31.000
+420WildCore Rp 51.000
+700WildCore Rp 81.000
+1375WildCore Rp 151.000
+2400WildCore Rp 251.000
+2820WildCore Rp 310.000
+4000WildCore Rp 420.000
+5375WildCore Rp 552.000
+6400WildCore Rp 653.000
+8150WildCore Rp 855.000
+WildCore Proses 1-15 menit
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'apex':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Apex Legends Mobile')
+await semar.send5ButImg(from, `APEX LEGENDS MOBILE
+==================
+90 Syndicate Gold Rp 21.000
+280 Syndicate Gold Rp 40.000
+500 Syndicate Gold Rp 70.000
+1050 Syndicate Gold Rp 126.000
+2150 SyndicateGold Rp 251.000
+5650 Syndicate Gold Rp 597.000
+11500 Syndicate Gold Rp 1.300.000
+23500 Syndicate Gold Rp 2.400.000
+Syndicate Gold proses 1-15 menit
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'mla':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Mobile Legend')
+await semar.send5ButImg(from, `DIAMOND MLBB FAST
+==================
+86 Diamond Rp 26.000
+172 Diamond Rp 46.000
+257 Diamond Rp 67.000
+344 Diamond Rp 87.000
+429 Diamond Rp 111.000
+514 Diamond Rp 131.000
+706 Diamond Rp 176.000
+878 Diamond Rp 219.000
+963 Diamond Rp 239.000
+1412 Diamond Rp 351.000
+2194 Diamond Rp 510.000
+3688 Diamond Rp 832.000
+5532 Diamond Rp 1.252.000
+9288 Diamond Rp 2.120.000
+==================
+STARLIGHT MEMBER Rp 150.000
+
+TWILIGHT PASS Rp 150.000
+
+STARLIGHT MEMBER PLUS Rp 340.000
+
+Diamond *Proses 1 - 15 Menit*
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'ragnarok':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Ragnarok')
+await semar.send5ButImg(from, `RAGNAROK M:ETERNAL LOVE
+==================
+36 BCC Rp 79.000
+145 BCC Rp 313.000
+373 BCC Rp 781.000
+748 BCC Rp 1.570.000
+1532 BCC Rp 3.110.000
+3993 BCC Rp 7.512.000
+9012 BCC Rp 16.600.000
+Bcc *Proses 1 - 15 Menit*
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break 
+case 'sausage':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Sausage Man')
+await semar.send5ButImg(from, `SAUSAGE MAN
+==================
+60Candies Rp 18.000
+180Candies Rp 54.000
+316Candies Rp 79.000
+718Candies Rp 155.000
+1368Candies Rp 357.000
+2118Candies Rp 483.000
+3548Candies Rp 725.000
+7048Candies Rp 1.532.000
+(Apabila jumlah Candy yg diinginkan tidak ada, silahkan kombinasi saja contoh 60+60)
+
+*HARGA SEWAKTU WAKTU BERUBAH*
+ Candies *Proses 1 - 15 Menit*
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'genshin':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Genshin Impact')
+await semar.send5ButImg(from, `GENSHIN IMPACT
+==================
+60 Genesis Crystals Rp 21.000
+330 Genesis Crystals Rp 73.000
+1090 Genesis Crystals Rp 219.000
+2240 Genesis Crystals Rp 471.000
+3880 Genesis Crystals Rp 727.000
+8080 Genesis Crystals Rp 1.470.000
+
+ Crystals *Proses 1 - 15 Menit*
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'mlb':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Mobile Legend')
+await semar.send5ButImg(from, `DIAMOND MLBB PAKET B
+==================
+42 Diamond Rp 13.000
+70 Diamond Rp 21.000
+140 Diamond Rp 39.000
+284 Diamond Rp 79.000
+355 Diamond Rp 96.000
+716 Diamond Rp 176.000
+1446 Diamond Rp 351.000
+2976 Diamond Rp 700.000
+7502 Diamond Rp 1.751.000
+ Diamond *Proses 1 - 15 Menit*
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'valorant':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Valorant')
+await semar.send5ButImg(from, `VALORANT
+==================
+125 Points Rp 16.000
+250 Points Rp 31.000
+300 Points Rp 35.000
+420 Points Rp 51.000
+625 Points Rp 68.000
+1125 Points Rp 118.000
+1375 Points Rp 151.000
+1650 Points Rp 168.000
+1950 Points Rp 201.000
+2400 Points Rp 252.000
+2820 Points Rp 310.000
+3400 Points Rp 337.000
+4000 Points Rp 411.000
+Points proses 1-15 menit
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'epep':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Free Fire')
+await semar.send5ButImg(from, `DIAMOND FREE FIRE
+==================
+140 Diamond Rp 21.000
+210 Diamond Rp 30.000
+280 Diamond Rp 41.000
+355 Diamond Rp 51.000
+425 Diamond Rp 59.000
+515 Diamond Rp 71.000
+635 Diamond Rp 89.000
+720 Diamond Rp 96.000
+860 Diamond Rp 116.000
+1075 Diamond Rp 146.000
+1440 Diamond Rp 196.000
+1795 Diamond Rp 241.000
+2000 Diamond Rp 266.000
+2355 Diamond Rp 316.000
+2720 Diamond Rp 361.000
+3440 Diamond Rp 456.000
+4000 Diamond Rp 526.000
+6000 Diamond Rp 786.000
+7290 Diamond Rp 961.000
+8010 Diamond Rp 1.155.000
+
+Membership Mingguan : Rp 32.000
+Membership Bulanan : Rp 150.000
+
+Jam Operasional : Buka 24 Jam
+Estimasi proses : 1 - 10 menit
+proses maksimal 24 jam
+*HARGA SEWAKTU WAKTU BERUBAH*
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'aov':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Arena Of Valor')
+await semar.send5ButImg(from, `ARENA OF VALOR
+==================
+230Voucher Rp 49.000
+470Voucher Rp 98.000
+950Voucher Rp 193.200
+1430Voucher Rp 290.000
+2390Voucher Rp 483.000
+4800Voucher Rp 968.000
+ Voucher *Proses 1 - 15 Menit*
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'pubg':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'PUBG Mobile')
+await semar.send5ButImg(from, `PUBG MOBILE REG ID 
+==================
+105UC ID Rp 19.000
+131UC ID Rp 23.500
+263UC ID Rp 46.000
+530UC ID Rp 91.000
+635UC ID Rp 109.000
+788UC ID Rp 136.000
+1050UC ID Rp 181.000
+1363UC ID Rp 226.000
+1630UC ID Rp 271.000
+1900UC ID Rp 316.000
+2030UC ID Rp 334.000
+2200UC ID Rp 361.000
+2425UC ID Rp 406.000
+2875UC ID Rp 451.000
+3300UC ID Rp 541.000
+3925UC ID Rp 631.000
+UC *Proses 1-15 menit*
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'cod':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Call Of Duty Mobile')
+await semar.send5ButImg(from, `CALL OF DUTY MOBILE
+==================
+63CP Rp 12.000
+128CP Rp 25.000
+321CP Rp 55.000
+645CP Rp 110.000
+1373CP Rp 212.000
+2060CP Rp 320.000
+3564CP Rp 518.000
+7656CP Rp 1.200.000
+Cp *Proses 1-15 menit*
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'saint':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Saint Seiya Awakening')
+await semar.send5ButImg(from, `SAINT SEIYA AWAKENING
+==================
+60Coupons Rp 17.000
+300Coupons Rp 74.000
+600Coupons Rp 144.000
+1200Coupons Rp 283.000
+1800Coupons Rp 455.000
+3000Coupons Rp 679.000
+4200Coupons Rp 988.000
+6000Coupons Rp 1.332.000
+Coupons *Proses 1-15 menit*
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'domino':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Higgs Domino')
+await semar.send5ButImg(from, `HIGGS DOMINO
+==================
+60M Chips Rp 12.000
+120M Chips Rp 20.000
+200M Chips Rp 22.500
+400M Chips Rp 45.000
+1B Chips Rp 73.000
+2B Chips Rp 146.000
+5B Chips Rp 351.000
+10B Chips Rp 720.000
+Chips Proses 1-15 menit
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+case 'life':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Life After')
+await semar.send5ButImg(from, `LIFE AFTER
+==================
+330Credits Rp 71.000
+558Credits Rp 112.000
+1105Credits Rp 221.000
+2268Credits Rp 421.000
+3468Credits Rp 661.000
+5768Credits Rp 1.120.000
+7768Credits Rp 1.600.000
+15536Credits Rp 2.800.000
+Credits Proses 1-15 menit
+===================` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "Website","url": `coomingsun`}},{"urlButton": {"displayText": "Script","url": `tanya owner`}},{"quickReplyButton": {"displayText": "Pembayaran","id": 'qris'}},{"quickReplyButton": {"displayText": "TopUp","id": 'menu'}}] )
+break  
+//------cara pesan-----//
+case 'format': {      
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)    
+reply(`*Sebelum lanjut, Mohon diisi dulu !!*
+
+Untuk Mobile Legend & Genshin Impact:
+ID :
+Server :
+Nick : 
+Jumlah Order :
+
+Untuk Pulsa & PPOB:
+Nomor HP/Nomor Meter:
+Nama:
+Nominal Order:
+
+Untuk Social Media:
+Link/Username:
+Jumlah Order:
+
+Untuk Lainnya :
+ID :
+Nick : 
+Jumlah Order :
+`) 
+break
+
+            case 'mee': {
+            	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+            	reply (`Pembuatnya adalah =
+1. Denpa
+2.Eka Danu Arta
+3.Rafli Hengker TzyTzy`) 
+break
+
+
+
+
 case 'allmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
